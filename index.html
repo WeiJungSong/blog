@@ -140,12 +140,9 @@
     
 
         
-          <div class="homelogoback" >
-            <h1><a href="#content" id="logo">WJ&#39;s change log</a></h1>
-            <h3>Learning note</h3>
-            <h5>W.J. Song</h5>
-            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
-          </div>
+          
+            <img id="homelogoimg" src="/blog/css/images/homelogo.jpg" style="border-style: solid; border-color: rgba(24,24,21,0.1); border-width: 8px;">
+          
         
     
     </div>
@@ -157,14 +154,17 @@
  <!-- home_logo_image居中 -->
  
     <script>
+        var img = new Image();
         var homelogodiv = document.getElementById("homelogo");
-        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
-          homelogodiv.style.width = document.body.clientWidth + "px";
-          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
-        } else {
-          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
-          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
-        }
+        img.src = document.getElementById("homelogoimg").src;
+        img.onload=function(){
+          if (img.width > document.body.clientWidth) {
+            document.getElementById("homelogoimg").style.width = document.body.clientWidth + "px";
+            homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+          } else {
+            homelogodiv.style.marginLeft = img.width * -0.5 + "px";
+          }
+        };
     </script>
   
 
@@ -259,7 +259,7 @@ Quick StartCreate a new post1$ hexo new &quot;My New...
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2024 WJ&#39;s change log All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2024 - 2024 WJ&#39;s change log All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
@@ -360,11 +360,6 @@ Quick StartCreate a new post1$ hexo new &quot;My New...
 
 
 
-
-
-	<div style="display: none;">
-    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
-  </div>
 
 
 
